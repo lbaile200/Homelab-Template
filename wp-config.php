@@ -20,13 +20,13 @@ define('WP_CACHE', true); // WP-Optimize Cache
  */
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'wordpress' );
+define( 'DB_NAME', '**CENSORED**' );
 /** Database username */
-define( 'DB_USER', 'wp_admin' );
+define( 'DB_USER', '**CENSORED**' );
 /** Database password */
-define( 'DB_PASSWORD', 'Det2ener3~' );
+define( 'DB_PASSWORD', '**CENSORED**' );
 /** Database hostname */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', '**CENSORED**' );
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
 /** The database collate type. Don't change this if in doubt. */
