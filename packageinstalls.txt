@@ -1,0 +1,3 @@
+sudo dnf remove mariadb-server mariadb-server-utils
+
+sudo dnf -y install nginx mysql-server httpd mod_ssl git-credential-manager php-gd
