@@ -1,0 +1,15 @@
+copr:copr.fedorainfracloud.org:codifryed:CoolerControl
+copr:copr.fedorainfracloud.org:emixampp:synology-drive
+copr:copr.fedorainfracloud.org:kylegospo:chatGPT-shell-cli
+copr:copr.fedorainfracloud.org:phracek:PyCharm
+fedora
+fedora-cisco-openh264
+google-chrome
+hardware_razer
+mullvad-stable
+mysql-8.4-lts-community
+mysql-connectors-community
+mysql-tools-8.4-lts-community
+rpmfusion-nonfree-nvidia-driver
+rpmfusion-nonfree-steam
+updates
