@@ -1,0 +1,32 @@
+  - name: Experimental
+    columns:
+      - size: full
+        widgets:
+          - type: bookmarks
+            groups:
+              - links:
+                - title: GMail
+                  url: https://mail.google.com
+                - title: Brutalist_Report
+                  url: https://brutalist.report/
+                - title: TheVerge
+                  url: https://www.theverge.com/
+                - title: Arstechnica
+                  url: https://arstechnica.com/
+                - title: Tested
+                  url: https://www.tested.com/
+                - title: Wired
+                  url: https://www.wired.com/
+                - title: Vox Technology
+                  url: https://www.vox.com/technology
+              - links:
+                  - title: Youtube
+                    url: https://youtube.com
+                  - title: HBO Max
+                    url: https://www.max.com/
+                  - title: Plex
+                    url: https://www.plex.tv/
+                  - title: PocketCasts
+                    url: https://play.pocketcasts.com/discover
+                  - title: Audiobookshelf
+                    url: https://audiobookshelf.homelabcabbage.synology.me

@@ -1,0 +1,102 @@
+  - name: Social
+    # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
+      #hide-desktop-navigation: true
+    columns:
+      - size: small
+        widgets:
+          - type: calendar
+            first-day-of-week: monday
+
+          - type: bookmarks
+            groups:
+              - links:
+                - title: GMail
+                  url: https://mail.google.com
+                - title: Brutalist_Report
+                  url: https://brutalist.report/
+                - title: TheVerge
+                  url: https://www.theverge.com/
+                - title: Arstechnica
+                  url: https://arstechnica.com/
+                - title: Tested
+                  url: https://www.tested.com/
+                - title: Wired
+                  url: https://www.wired.com/
+                - title: Vox Technology
+                  url: https://www.vox.com/technology
+              - links:
+                  - title: Youtube
+                    url: https://youtube.com
+                  - title: HBO Max
+                    url: https://www.max.com/
+                  - title: Plex
+                    url: https://www.plex.tv/
+                  - title: PocketCasts
+                    url: https://play.pocketcasts.com/discover
+                  - title: Audiobookshelf
+                    url: https://audiobookshelf.homelabcabbage.synology.me
+
+      - size: full
+        widgets:
+          - type: group
+            widgets:
+              - type: bookmarks
+                groups:
+                  - links:
+                      - title: Bluesky
+                        url: https://bsky.app/
+                      - title: Instagram
+                        url: https://instagram.com
+                      - title: Threads
+                        url: https://threads.net
+
+          - type: videos
+            channels:
+              - UCXuqSBlHAE6Xw-yeJA0Tunw # Linus Tech Tips
+              - UCy0tKL1T7wFoYcxCe0xjN6Q # Technology Connections
+              - UClqhvGmHcvWL9w3R48t9QXQ # Engineering Explained
+              - UCBJycsmduvYEL83R_U4JriQ # Marques Brownlee
+              - UCHnyfMqiRRG1u-2MsSQLbXA # Veritasium
+              - UC2PA-AKmVpU6NKCGtZq_rKQ # Philosophy Tube
+              - UCNvsIonJdJ5E4EXMa65VYpA # ContraPoints
+              - UC7-E5xhZBZdW-8d7V80mzfg # Jenny Nicholson
+              - UCAL3JXZSzSm8AlZyD3nQdBA # Primitive Technology 
+
+
+          - type: group
+            widgets:
+              - type: reddit
+                subreddit: malelivingspace
+                show-thumbnails: true
+              - type: reddit
+                subreddit: macsetups
+                show-thumbnails: true
+              - type: reddit
+                subreddit: interiordecorating
+                show-thumbnails: true
+              - type: reddit
+                subreddit: battlestations
+                show-thumbnails: true
+              - type: reddit
+                subreddit: Notion
+                show-thumbnails: true
+              - type: reddit
+                subreddit: HomeDecorating
+                show-thumbnails: true
+
+      - size: small
+        widgets:
+          - type: weather
+            location: Tennessee, United States
+            units: imperial # alternatively "metric"
+            hour-format: 12h # alternatively "24h"
+            # Optionally hide the location from being displayed in the widget
+            # hide-location: true
+          - type: twitch-channels
+            channels:
+              - dotamajor
+              - riotgames
+              - piratesoftware
+              - midnightsumo
+              - dota2ti
+
