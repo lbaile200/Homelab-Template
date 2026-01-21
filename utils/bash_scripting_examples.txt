@@ -1,1 +1,144 @@
-/home/lucaswbailey/bash_scripting_examples.txt
+[Basic Shell Navigation]
+pwd		"print working directory" -	aka. where am I right now? 
+ls -la		"list"			  -	aka. What is in here? (ls simpler but less useful, does not show dotfiles, etc)
+cd		"Change Directory"	  -	aka. I've found a folder, let's go there. 
+touch		"touch this file"	  -	aka. if I can touch it, it exists, make it exist.
+mkdir		"Make Directory"	  -	aka. Create a folder
+mv		"MoVe"			  -	aka. Move this thing FROM here TO here.
+cp		"CoPy"			  -	aka. Make a copy of this thing FROM here, ALSO TO here.
+nano		"basic text editor"	  -	aka. Open this file (not folder) for reading and editing
+cat		"conCATenate"		  -	aka. Show me the last few lines of this file (useful for logs)
+tail -f		"follow this file"	  -	aka. Show me the last few lines of this file (useful for live logs)
+curl		"Connect to this URL"	  -	aka. test that this site exists and show me its response code. 
+wget		"Web Get"		  -	aka. Download this file at this URL. 
+history		"history"		  -	aka. Show me the history of commands run by me.
+echo		"echo"			  -	aka. Say this thing that I just said
+sudo		"SuperUser Do"		  -	aka. Do this thing as root, do not ask for permission (can break stuff)
+crontab		"..."			  -	aka. Event scheduler.  I need this event to happen every day at 5
+dnf		"DaNdiFied Yum"		  -	aka. Package manager for Fedora/Redhat. apt-get, yaourt, and others exist, syntax is always similar
+man		"MANual"		  -	aka. Show me the manual for this command.
+systemctl	"SYSTEMConTroL"		  -	aka. Control my system in some way (reboot, shut down, change running services)
+top		"show TOP processes"	  -	aka. Windows Task Manager (HTOP is better, install it with DNF)
+ssh		"Secure SHell"		  -	aka. Connect to this other machine remotely via command line.
+ip		"Internet Protocol"	  -	aka. Show me network information about this device (ip -a)
+
+[General]
+'#!/bin/bash' to start all bash scripts
+
+help for
+help while
+help if
+
+==Operators==
+Sometimes bash doesn't like symbols as operators (< > / *)
+
+-eq    Equal to 
+-ne    Not equal to
+-gt    Greater than
+-lt    Less than
+-z     True if string empty
+-n     True if string not empty 
+
+% Modulo operator, returns the remainder of a division operation.  10 % 3 would return 1 \ 
+10 % 2 would return 0.
+
+==Even/Odd==
+Bash doesn't have a directly built-in operator for even/odd, however we can fake it. \
+If something is cleanly divisible by 2 then it is even, otherwise it is odd.  This will \
+usually have an 'if/else' statement.
+
+number=4
+if [[ $((number % 2)) -eq 0]]; then
+    echo "$number is even"
+else
+    echo "$number is odd"
+fi
+ 
+==Setting variables in bash==
+i=1
+echo "$i"
+
+==Setting array as variable in bash==
+i="apple banana cherry peach"
+echo "${i[@]}" # replace @ with position in array you wish to show
+
+==Setting array with brace expansion==
+i=({1..10})
+echo "${i[@]}" # replace @ with position in array you wish to show
+
+==A word on * vs @==
+Use * in an array when you want the entire array returned as 1 value. For example \ 
+i="apple banana cherry peach" echo "${i[*]}" \ 
+This returns apple banana cherry peach all as 1 item.  If you were to try to iterate \ 
+through this return, you would not be able to.  As bash treats it as \ 
+"apple banana cherry peach" 
+
+Use @ in an array when you want the entire array returned as separate values. For example \ 
+i="apple banana cherry peach" echo "${i[@]}" \ 
+This returns apple banana cherry peach all as separate items. If you were to try to iterate \ 
+through this return, you would be able to do so. As bash treats it as \ 
+"apple" "banana" "cherry" "peach"
+
+[For Loop]
+For every time an instance occurs...
+
+for ((i = 0; i < 5; i++)); do
+    echo "Iteration: $i"
+done
+
+[For Loop with vars from shell or env]
+items="apple banana cherry peach"
+for i in $items; do
+    echo "$i"
+done
+
+[While loop]
+While a condition exists...
+
+i=1
+while [ $i -le 5 ] do 
+    echo "$i"
+    ((i++))
+done
+
+[If]
+If condition (true/false) then...
+
+i=1
+if [ $i -lt 5 ]; then 
+    echo "nope"; 
+fi
+
+[Else]
+If condition, otherwise...
+
+i=1
+if [ $i -gt 5 ]; then 
+    echo "nope"; 
+else 
+    echo "yup"; 
+fi
+
+[Elif]
+If condition, else if another condition...
+
+$i
+if [ $i -gt 5 ]; then
+    echo "$i";
+elif [ $i -eq 1 ]; then
+    echo "$i";
+fi
+
+[Combine]
+The above are building blocks, you can combine them in a number of ways...
+
+i=1
+while [ $i -lt 100 ]; do 
+    ((i++))
+  if [[ $((i %2)) -eq 0 ]]; then
+      echo "$i is even"
+  else
+      echo "$i is odd"
+  fi
+done
+

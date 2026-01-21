@@ -1,4 +1,0 @@
-- hosts: fedora1
-  become: true
-  tasks:
-    - ansible.builtin.ping:
