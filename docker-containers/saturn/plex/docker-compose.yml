@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  plex:
+    image: linuxserver/plex
+    container_name: plex
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - VERSION=latest
+    ports:
+      - 32400:32400
+    volumes:
+      - /var/www/html/docker/plex:/config
+      - /mnt/Sol/Tv-shows:/tv
+      - /mnt/Sol/Movies:/movies
+      - /mnt/Sol/Music:/music
+    restart: unless-stopped

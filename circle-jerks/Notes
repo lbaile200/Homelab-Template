@@ -1,0 +1,46 @@
+[[Muscles]] 
+quads       *
+calves      *
+glutes      *
+hamstrings  *
+adductors   *
+abductors   *
+triceps     *
+biceps      *
+Front Delt  
+Rear Delt
+Side Delt
+Chest
+Upper Chest
+abs
+Traps
+Lats
+Teres
+
+[[Features]]
+Mobile view (paginated?)
+Images and illustrations
+"Compound" checkbox in add, included at least 1 (no more than 2) compounds in builder
+"Link" option for individual exercises to include links within my site to more pages (good for SEO, good for users)
+
+[[Cleanup]]
+DB sanitation: move creds to external file not readable
+Move DB calls to external doc, call when needed, 1 central place for all calls.
+
+[[Infra]]
+Apache virtualsite and domain connector
+reverse proxy add (so findable on open web)
+Github push for all files (SANITIZED WITH GITIGNORE)
+
+[[V2]]
+Proper website, with help content, articles, exercise explainers, recipes.
+Login protected view, lets you save workouts, track 
+App-like functionality, lets you use login view as a checklist
+
+(article ideas for proper website)
+    1. how to read a nutrition label
+    2. what 'high protein' actually is (CTP scale)
+    3. How to identify what an exercise is SUPPOSED to target
+    4. What to do if an exercise isn't 'hitting'
+    5. Mesocycles and you
+

@@ -10,7 +10,7 @@ number=${percentage%\%*}
 
 message="Used space on ${disk} is ${number}%" 
 
-push_url="https://uptime.homelabcabbage.synology.me/api/push/ciTwRmMFt3?"
+push_url="https://uptime.homelabcabbage.synology.me/api/push/ciTwRmMFt3"
 
 if [ $number -lt $threshold ]; then
     service_status="up"

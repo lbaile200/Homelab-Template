@@ -1,0 +1,18 @@
+services:
+  alloy:
+    image: grafana/alloy:latest
+    container_name: alloy
+    restart: unless-stopped
+    command: ["run", "--server.http.listen-addr=0.0.0.0:12345", "/etc/alloy/config.alloy"]
+    volumes:
+      - /var/www/html/docker/alloy/config.alloy:/etc/alloy/config.alloy:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/log:/host/var/log:ro
+
+  apache_exporter:
+    image: lusotycoon/apache-exporter:latest
+    restart: unless-stopped
+    environment:
+      - SCRAPE_URI=http://127.0.0.1/server-status?auto
+    ports:
+      - "9117:9117"

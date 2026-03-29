@@ -1,0 +1,13 @@
+services:
+  freshrss:
+    image: freshrss/freshrss:latest
+    container_name: freshrss
+    restart: unless-stopped
+    ports:
+      - "8090:80"
+    environment:
+      TZ: America/New_York
+      CRON_MIN: "13,43"
+    volumes:
+      - ./data:/var/www/FreshRSS/data
+      - ./extensions:/var/www/FreshRSS/extensions

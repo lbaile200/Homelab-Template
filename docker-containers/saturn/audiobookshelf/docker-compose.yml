@@ -1,0 +1,19 @@
+services:
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:latest
+    container_name: audiobookshelf
+    restart: unless-stopped
+
+    ports:
+      - "13378:80"   # host:container (adjust!)
+    environment:
+      - PUID=1000    # optional, only if you used it
+      - PGID=1000    # optional, only if you used it
+      - TZ=America/New_York
+
+    volumes:
+      - /mnt/Sol/Music/Podcasts:/podcasts
+      - /mnt/Sol/Music/Audiobooks:/audiobooks
+      - /var/www/html/docker/audiobookshelf/config:/config
+      - /var/www/html/docker/audiobookshelf/metadata:/metadata
+
