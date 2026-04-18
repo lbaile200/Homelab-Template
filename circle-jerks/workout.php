@@ -131,7 +131,7 @@ if (count($ids) > 0) {
 <div class="wrap">
     <div class="header">
         <h1>Workout Session</h1>
-        <a href="recommend.php">Back to Recommendations</a>
+        <a href="/recommend">Back to Recommendations</a>
     </div>
 
     <?php if (count($workout) > 0): ?>

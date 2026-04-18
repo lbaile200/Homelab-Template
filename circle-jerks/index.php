@@ -499,7 +499,7 @@ while ($row = $res->fetch_assoc()) {
 <body>
 <div class="wrap">
     <h1>Circle Jerks Exercise Tool</h1>
-    <p><a href="recommend.php">Go to Exercise Recommender</a></p>
+    <p><a href="/recommend">Go to Exercise Recommender</a></p>
 
     <?php if ($message !== ''): ?>
         <p class="msg"><?php echo htmlspecialchars($message); ?></p>
@@ -520,7 +520,7 @@ while ($row = $res->fetch_assoc()) {
             <label for="muscle_group_name">Muscle Group Name</label>
             <input id="muscle_group_name" name="muscle_group_name" required value="<?php echo htmlspecialchars((string)($editingMuscleGroup['muscle_group_name'] ?? '')); ?>">
             <button type="submit"><?php echo $editingMuscleGroup ? 'Update Muscle Group' : 'Add Muscle Group'; ?></button>
-            <?php if ($editingMuscleGroup): ?><a href="index.php">Cancel Edit</a><?php endif; ?>
+            <?php if ($editingMuscleGroup): ?><a href="/recommend/admin">Cancel Edit</a><?php endif; ?>
         </form>
 
         <form method="post" onsubmit="return confirm('Delete selected muscle groups?');">
@@ -555,7 +555,7 @@ while ($row = $res->fetch_assoc()) {
             <label for="eligible_day_names">Eligible Day Name(s)</label>
             <input id="eligible_day_names" name="eligible_day_names" required placeholder="Example: Back Day, Leg Day, Upper Day" value="<?php echo htmlspecialchars((string)($editingEligibleDay['eligible_day_name'] ?? '')); ?>">
             <button type="submit"><?php echo $editingEligibleDay ? 'Update Eligible Day' : 'Add Eligible Day'; ?></button>
-            <?php if ($editingEligibleDay): ?><a href="index.php">Cancel Edit</a><?php endif; ?>
+            <?php if ($editingEligibleDay): ?><a href="/recommend/admin">Cancel Edit</a><?php endif; ?>
         </form>
 
         <form method="post" onsubmit="return confirm('Delete selected eligible days?');">
@@ -590,7 +590,7 @@ while ($row = $res->fetch_assoc()) {
             <label for="focus_name">Focus Name</label>
             <input id="focus_name" name="focus_name" required placeholder="Example: Strength, Hypertrophy, Mobility" value="<?php echo htmlspecialchars((string)($editingFocus['focus_name'] ?? '')); ?>">
             <button type="submit"><?php echo $editingFocus ? 'Update Focus' : 'Add Focus'; ?></button>
-            <?php if ($editingFocus): ?><a href="index.php">Cancel Edit</a><?php endif; ?>
+            <?php if ($editingFocus): ?><a href="/recommend/admin">Cancel Edit</a><?php endif; ?>
         </form>
 
         <form method="post" onsubmit="return confirm('Delete selected focuses?');">
@@ -674,7 +674,7 @@ while ($row = $res->fetch_assoc()) {
             </div>
 
             <button type="submit"><?php echo $editingExercise ? 'Update Exercise' : 'Add Exercise'; ?></button>
-            <?php if ($editingExercise): ?><a href="index.php">Cancel Edit</a><?php endif; ?>
+            <?php if ($editingExercise): ?><a href="/recommend/admin">Cancel Edit</a><?php endif; ?>
         </form>
 
         <form method="post" onsubmit="return confirm('Delete selected exercises?');">

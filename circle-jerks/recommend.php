@@ -729,7 +729,7 @@ $collapseFilterCard = ($_SERVER['REQUEST_METHOD'] === 'POST' && count($recommend
     <div class="header-row">
         <h1>Exercise Recommendations</h1>
         <div class="nav">
-            <a href="index.php">Manage Database</a>
+            <a href="/recommend/admin">Manage Database</a>
         </div>
     </div>
 
@@ -866,7 +866,7 @@ $collapseFilterCard = ($_SERVER['REQUEST_METHOD'] === 'POST' && count($recommend
                     <?php endforeach; ?>
                 </tbody>
             </table>
-                <form method="get" action="workout.php">
+                <form method="get" action="/recommend/workout">
                     <input type="hidden" name="ids" value="<?php echo htmlspecialchars($currentRecommendationIdsCsv); ?>">
                     <input type="hidden" name="minutes" value="<?php echo (int)$selectedMinutes; ?>">
                     <input type="hidden" name="experience_level" value="<?php echo htmlspecialchars($experience); ?>">
