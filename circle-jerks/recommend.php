@@ -4,7 +4,7 @@ declare(strict_types=1);
 $DB_HOST = getenv('DB_HOST') ?: '127.0.0.1';
 $DB_PORT = (int)(getenv('DB_PORT') ?: '3306');
 $DB_NAME = getenv('DB_NAME') ?: 'circle_jerks';
-$DB_USER = getenv('DB_USER') ?: 'root';
+$DB_USER = getenv('DB_USER') ?: '';
 $DB_PASS = getenv('DB_PASS') ?: '';
 
 $mysqli = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME, $DB_PORT);
@@ -666,8 +666,7 @@ if (count($recommendations) > 0) {
     $ids = [];
     foreach ($recommendations as $row) {
         $ids[] = (int)$row['id'];
-    }
-    $currentRecommendationIdsCsv = implode(',', $ids);
+    }    $currentRecommendationIdsCsv = implode(',', $ids);
 }
 $collapseFilterCard = ($_SERVER['REQUEST_METHOD'] === 'POST' && count($recommendations) > 0 && $error === '');
 ?>
@@ -677,56 +676,17 @@ $collapseFilterCard = ($_SERVER['REQUEST_METHOD'] === 'POST' && count($recommend
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Exercise Recommendations</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 2rem; }
-        .wrap { max-width: 960px; margin: 0 auto; }
-        .card { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
-        .card-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-        .card-header h2 { margin: 0; }
-        .header-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-        .accordion-toggle { width: auto; margin-top: 0; padding: 0.35rem 0.6rem; cursor: pointer; }
-        .card-body { margin-top: 0.75rem; }
-        .nav a { margin-right: 1rem; }
-        label { display: block; margin-top: 0.75rem; font-weight: 600; }
-        input[type="range"], select { width: 100%; margin-top: 0.4rem; }
-        .checklist { margin-top: 0.5rem; }
-        .checklist label { font-weight: 400; margin-top: 0.3rem; }
-        .checklist input { width: auto; margin-right: 0.5rem; }
-        .time-value { margin-top: 0.35rem; font-weight: 700; }
-        button { margin-top: 1rem; padding: 0.55rem 0.95rem; }
-        .inline-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-        .inline-actions form { display: inline; margin: 0; }
-        .reroll-btn { margin-top: 0; padding: 0.35rem 0.65rem; }
-        table { width: 100%; border-collapse: collapse; margin-top: 0.75rem; }
-        th, td { border: 1px solid #ddd; padding: 0.5rem; text-align: left; vertical-align: top; }
-        .msg { color: #0a7d2a; }
-        .err { color: #b00020; }
-        .print-plan { display: none; }
+    <link rel="stylesheet" href="recommend.css">
 
-        @media print {
-            .nav,
-            .inline-actions,
-            .accordion-toggle,
-            #criteria-body,
-            .msg,
-            .err,
-            .reroll-btn,
-            table {
-                display: none !important;
-            }
-
-            body { margin: 0.5in; font-size: 11pt; }
-            .card { border: 0; padding: 0; margin: 0 0 0.2in 0; }
-            .print-plan { display: block !important; }
-            .print-plan h3 { margin: 0 0 0.12in 0; }
-            .print-plan ol { margin: 0; padding-left: 1.2rem; }
-            .print-plan li { margin-bottom: 0.08in; }
-        }
-    </style>
 </head>
 <body>
 <div class="wrap">
     <div class="header-row">
+	<div class="mainbutton">
+		<a class="block-button" href=/>
+			Back to Site
+		</a>
+	</div>
         <h1>Exercise Recommendations</h1>
     </div>
 
@@ -863,7 +823,7 @@ $collapseFilterCard = ($_SERVER['REQUEST_METHOD'] === 'POST' && count($recommend
                     <?php endforeach; ?>
                 </tbody>
             </table>
-                <form method="get" action="workout.php">
+                <form method="get" action="/recommend/workout">
                     <input type="hidden" name="ids" value="<?php echo htmlspecialchars($currentRecommendationIdsCsv); ?>">
                     <input type="hidden" name="minutes" value="<?php echo (int)$selectedMinutes; ?>">
                     <input type="hidden" name="experience_level" value="<?php echo htmlspecialchars($experience); ?>">

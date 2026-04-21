@@ -1,0 +1,164 @@
+    body { 
+        font-family: Arial, sans-serif; margin: 2rem; 
+    }
+
+    h1{
+        width: 100%;
+        Position: relative;
+        display: flex;
+        font-size: clamp(1.2rem, 5vw, 3em); 
+    }
+
+    .wrap {
+         max-width: 960px; margin: 0 auto; 
+    }
+
+    .card {
+         border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; 
+    }
+
+    .card-header {
+         display: flex; align-items: center; justify-content: space-between; gap: 1rem; 
+    }
+
+    .card-header h2 {
+         margin: 0; 
+    }
+
+    .header-row {
+         display: flex; align-items: center; justify-content: space-between; gap: 1rem; 
+    }
+
+    .accordion-toggle {
+         width: auto; margin-top: 0; padding: 0.35rem 0.6rem; cursor: pointer; 
+    }
+
+    .card-body {
+         margin-top: 0.75rem; 
+    }
+
+    .nav a {
+         margin-right: 1rem; 
+    }
+
+    label {
+         display: block; margin-top: 0.75rem; font-weight: 600; 
+    }
+
+    input[type="range"], select {
+         width: 100%; margin-top: 0.4rem; 
+    }
+
+    .checklist {
+         margin-top: 0.5rem; 
+    }
+
+    .checklist label {
+         font-weight: 400; margin-top: 0.3rem; 
+    }
+
+    .checklist input {
+         width: auto; margin-right: 0.5rem; 
+    }
+
+    .time-value {
+         margin-top: 0.35rem; font-weight: 700; 
+    }
+
+    button {
+         margin-top: 1rem; padding: 0.55rem 0.95rem; 
+    }
+
+    .inline-actions {
+         display: flex; gap: 0.5rem; flex-wrap: wrap; 
+    }
+
+    .inline-actions form {
+         display: inline; margin: 0; 
+    }
+
+    .reroll-btn {
+         margin-top: 0; padding: 0.35rem 0.65rem; 
+    }
+
+    table {
+         width: 100%; 
+         border-collapse: collapse; 
+         margin-top: 0.75rem; 
+         display: inline-block;
+         overflow-x: scroll;
+    }
+
+    th, td {
+         border: 1px solid #ddd; padding: 0.5rem; text-align: left; vertical-align: top; 
+    }
+
+    .msg {
+         color: #0a7d2a; 
+    }
+
+    .err {
+         color: #b00020; 
+    }
+
+    .print-plan {
+         display: none; 
+    }
+
+	.block-button {
+         width: 100%; 
+         align-content: center; 
+         font-size: 24px; 
+         background-color: black; 
+         color: #FFF; 
+         border-radius: 4px; 
+         border: 2px solid #000; 
+         padding: 5px; 
+         font-size: clamp(1rem, 5vw, 2em)
+    }
+
+	.block-button:hover {
+         background-color(srgb 0.0980392 0.0980392 0.0980392 / 0.85); color: #FFF;
+    }
+
+	.mainbutton {
+         height: auto;
+         display: flex;
+    }
+
+@media print {
+         .nav,
+         .inline-actions,
+         .accordion-toggle,
+         #criteria-body,
+         .msg,
+         .err,
+         .reroll-btn,
+    table {
+         display: none !important;
+    }
+
+    body { 
+         margin: 0.5in; font-size: 11pt; color(srgb 0.0980392 0.0980392 0.0980392 / 0.85);
+    }
+
+    .card { 
+         border: 0; padding: 0; margin: 0 0 0.2in 0; 
+    }
+
+    .print-plan { 
+         display: block !important; 
+    }
+
+    .print-plan h3 { 
+         margin: 0 0 0.12in 0; 
+    }
+
+    .print-plan ol { 
+         margin: 0; padding-left: 1.2rem; 
+    }
+
+    .print-plan li { 
+         margin-bottom: 0.08in; 
+    }
+}
