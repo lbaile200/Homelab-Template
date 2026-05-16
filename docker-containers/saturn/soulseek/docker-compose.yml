@@ -1,0 +1,18 @@
+---
+services:
+  slskd:
+    image: slskd/slskd
+    container_name: slskd
+    ports:
+      - "5030:5030"
+      - "5031:5031"
+      - "50300:50300"
+    environment:
+      - SLSKD_REMOTE_CONFIGURATION=true
+      - SLSKD_USERNAME=Cabbage
+      - SLSKD_PASSWORD=Purplefishland7.
+      - SLSKD_SLSK_USERNAME=Cabbagehands3319
+      - SLSKD_SLSK_PASSWORD=Purplefishland7.
+    volumes:
+      - /var/www/html/docker/soulseek:/app
+    restart: always
