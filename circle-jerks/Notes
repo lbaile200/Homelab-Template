@@ -7,15 +7,15 @@ adductors   *
 abductors   *
 triceps     *
 biceps      *
-Front Delt  
-Rear Delt
-Side Delt
-Chest
-Upper Chest
-abs
-Traps
-Lats
-Teres
+Front Delt  *
+Rear Delt   *
+Side Delt   *
+Chest       *
+Upper Chest *
+abs         *
+Traps       *
+Lats        *
+Teres       *
 
 [[Features]]
 Mobile view (paginated?)
@@ -26,6 +26,7 @@ Images and illustrations
 [[Cleanup]]
 DB sanitation: move creds to external file not readable
 Move DB calls to external doc, call when needed, 1 central place for all calls.
+Hide "Manage Database" button.
 
 [[Infra]]
 Apache virtualsite and domain connector
