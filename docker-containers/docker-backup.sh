@@ -4,7 +4,7 @@ set -euo pipefail
 
 REMOTE_PATH="/var/www/html/docker"
 DEST_BASE="$HOME/Documents/Freelance/Homelab Template/docker-containers"
-HOSTS=("saturn" "thera")
+HOSTS=("saturn" "thera" "azeroth")
 
 mkdir -p "$DEST_BASE"
 
